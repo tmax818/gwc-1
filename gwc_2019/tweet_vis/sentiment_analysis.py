@@ -9,11 +9,12 @@ tweetFile.close()
 polarityList = []
 #[OPTIONAL] Subjectivity
 subjectivityList = []
+
 #Get Sentiment Data
 for tweet in tweetData:
 	tweetblob = TextBlob(tweet["text"])
 	polarityList.append(tweetblob.polarity)
-#[OPTIONAL] Subjectivity
+#[OPTIONAL] Subjectivitys
 	subjectivityList.append(tweetblob.subjectivity)
 #Create the Graph
 plt.hist(polarityList, bins=[-1.1, -.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1.1])
